@@ -9,7 +9,7 @@ namespace Project.Entities
 {
     public class Taxas
     {
-        public Bandeira Bandeira { get; set; }
+        public string Bandeira { get; set; }
         public decimal Credito { get; set; }
         public decimal Debito { get; set; }
     }

@@ -9,7 +9,7 @@ namespace Project.Entities
 {
     public class MDR
     {
-        public Adquirente Adquirente { get; set; }
+        public string Adquirente { get; set; }
         public List<Taxas> Taxas { get; set; }
     }
 }
