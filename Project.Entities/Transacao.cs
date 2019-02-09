@@ -8,7 +8,7 @@ using Project.Entities.Enum;
 namespace Project.Entities
 {
     public class Transacao
-    {
+    { 
         public decimal Valor { get; set; }
         public Adquirente Adquirente { get; set; }
         public TipoTransacao Tipo { get; set; }
