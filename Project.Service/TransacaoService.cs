@@ -13,11 +13,9 @@ namespace Project.Service
         public TotalLiquido CalculaTotalLiquido(Transacao transacao)
         {
             decimal percentual = ObterPercentualDesconto(transacao);
-
             TotalLiquido totalLiquido = new TotalLiquido();
             string temp = (transacao.Valor - (transacao.Valor * (percentual / 100))).ToString("N2");
             totalLiquido.ValorLiquido = Convert.ToDecimal(temp);
-
             return totalLiquido;
         }
 
@@ -39,7 +37,6 @@ namespace Project.Service
                     }
                 }
             }
-
             return valor;
         }
     }
