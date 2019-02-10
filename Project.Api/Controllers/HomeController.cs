@@ -11,19 +11,25 @@ using AutoMapper;
 
 namespace Project.Api.Controllers
 {
+    [RoutePrefix("api/Home")]
     public class HomeController : ApiController
     {
         [HttpGet]
-        public List<MDR> mdr()
+        [Route("mdr")]
+        public List<MDR> Mdr()
         {
             return MockMDR.ListaMDR();
         }
 
         [HttpPost]
-        public HttpResponseMessage transaction([FromBody] TransacaoModel model)
+        [Route("transaction")]
+        public HttpResponseMessage Transaction([FromBody] TransacaoModel model)
         {
             if (ModelState.IsValid)
             {
+                if(model == null)
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Nenhum dado requisitado");
+
                 Transacao transacao = Mapper.Map<Transacao>(model);
                 TransacaoService transacaoService = new TransacaoService();
                 TotalLiquidoModel totalLiquidoModel = Mapper.Map<TotalLiquidoModel>(transacaoService.CalculaTotalLiquido(transacao));
