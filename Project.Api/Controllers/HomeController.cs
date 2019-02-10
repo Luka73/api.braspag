@@ -11,7 +11,7 @@ using AutoMapper;
 
 namespace Project.Api.Controllers
 {
-    [RoutePrefix("api/Home")]
+    [RoutePrefix("api/home")]
     public class HomeController : ApiController
     {
         [HttpGet]

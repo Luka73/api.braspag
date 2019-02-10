@@ -21,7 +21,7 @@ namespace Project.Api.Models
         [ValidationTipo(ErrorMessage = "Por favor, insira um tipo válido.")]
         public string Tipo { get; set; }
         [Required (ErrorMessage = "Por favor, digite a bandeira.")]
-        [ValidationBandeira(ErrorMessage = "Por favor, insira uma bandeira válido.")]
+        [ValidationBandeira(ErrorMessage = "Por favor, insira uma bandeira válida.")]
         public string Bandeira { get; set; }
     }
 }
