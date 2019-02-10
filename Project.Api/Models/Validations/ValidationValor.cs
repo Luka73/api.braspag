@@ -27,9 +27,9 @@ namespace Project.Api.Models.Validations
         public bool ValidaValor(string valor)
         {
             Decimal result;
-
+ 
             if (Decimal.TryParse(valor, out result))
-            {
+            {  
                 result = Convert.ToDecimal(valor);
 
                 if (result > 0)

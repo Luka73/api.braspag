@@ -12,7 +12,8 @@ namespace Project.Api.Mapping
     {
         public AutoMapperConfig()
         {
-            CreateMap<TransacaoModel, Transacao>();
+            CreateMap<TransacaoModel, Transacao>()
+                .ForMember<Decimal>(x => x.Valor, x => x.MapFrom<string>(y => y.Valor.Replace('.',',')));
             CreateMap<TotalLiquido, TotalLiquidoModel>();
         }
     }

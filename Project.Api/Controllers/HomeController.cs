@@ -42,7 +42,8 @@ namespace Project.Api.Controllers
                 {
                     foreach (var e in i.Errors)
                     {
-                        listaErros.Add(e.ErrorMessage);
+                        if(!String.IsNullOrEmpty(e.ErrorMessage))
+                            listaErros.Add(e.ErrorMessage);
                     }
                 }
                 return Request.CreateResponse(HttpStatusCode.BadRequest, listaErros);
