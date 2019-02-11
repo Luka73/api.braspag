@@ -28,7 +28,7 @@ namespace Project.Api.Models.Validations
         {
             Decimal result;
  
-            if (Decimal.TryParse(valor, out result))
+            if (Decimal.TryParse(valor.Replace(',','.'), out result))
             {  
                 result = Convert.ToDecimal(valor);
 
